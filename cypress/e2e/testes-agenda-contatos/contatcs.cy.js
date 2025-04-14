@@ -1,9 +1,9 @@
 /// <reference types="cypress" />
 describe('Testes para a funcionalidade completa de contatos', () => {
     beforeEach(() => {
-        cy.visit('https://agenda-contatos-react.vercel.app/')
+        cy.visit('https://agenda-contatos-react.vercel.app')
     })
-    it('Deve adicionar múltiplos contatos', () => {
+    it('Deve adicionar múltiplos contatos - Inclusão', () => {
         cy.get('input[type="text"]').type('Douglas Souza')
         cy.get('input[type="email"]').type('douglas@gmail.com')
         cy.get('input[type="tel"]').type('(21) 975343-2222')
@@ -24,7 +24,7 @@ describe('Testes para a funcionalidade completa de contatos', () => {
         cy.contains('Bruna Santiago').should('exist')
 
     })
-    it('Deve editar/alterar um contato existente', () => {
+    it('Deve editar/alterar um contato existente - Alteração', () => {
         cy.get('.edit').should('be.visible').first().click()
         
         cy.get('input[type="text"]').should('be.visible').clear().type('Lucas Oliveira')
@@ -32,7 +32,7 @@ describe('Testes para a funcionalidade completa de contatos', () => {
         cy.get('input[type="tel"]').should('be.visible').clear().type('(21) 975742-2222')
         cy.get('.alterar').click()
     })
-    it('Deve remover um  contato', () => {
+    it('Deve remover um  contato - Remoção', () => {
         cy.get('.sc-beqWaB.eQdhbg.contato').eq(0).find('.delete').click()
     })
 })
