@@ -9,14 +9,14 @@ describe('Testes para a funcionalidade completa de contatos', () => {
         cy.get('input[type="tel"]').type('(21) 975343-2222')
         cy.get('.adicionar').click()
 
-        cy.get('input[type="text"]').clear().type('Francisco Oliveira')
-        cy.get('input[type="email"]').clear().type('francisco@gmail.com')
-        cy.get('input[type="tel"]').clear().type('(21) 975343-4444')
+        cy.get('input[type="text"]').type('Francisco Oliveira')
+        cy.get('input[type="email"]').type('francisco@gmail.com')
+        cy.get('input[type="tel"]').type('(21) 975343-4444')
         cy.get('.adicionar').click()
 
-        cy.get('input[type="text"]').clear().type('Bruna Santiago')
-        cy.get('input[type="email"]').clear().type('brunateste@gmail.com')
-        cy.get('input[type="tel"]').clear().type('(21) 97595-6657')
+        cy.get('input[type="text"]').type('Bruna Santiago')
+        cy.get('input[type="email"]').type('brunateste@gmail.com')
+        cy.get('input[type="tel"]').type('(21) 97595-6657')
         cy.get('.adicionar').click()
 
         cy.contains('Douglas Souza').should('exist')
