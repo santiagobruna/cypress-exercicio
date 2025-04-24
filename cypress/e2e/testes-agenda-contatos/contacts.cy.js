@@ -31,6 +31,7 @@ describe('Testes para a funcionalidade completa de contatos', () => {
         cy.get('input[type="email"]').should('be.visible').clear().type('lucas@gmail.com')
         cy.get('input[type="tel"]').should('be.visible').clear().type('(21) 975742-2222')
         cy.get('.alterar').click()
+        cy.wait(3000)
     })
     it('Deve remover um  contato - Remoção', () => {
         cy.get('.sc-beqWaB.eQdhbg.contato').eq(0).find('.delete').click()
